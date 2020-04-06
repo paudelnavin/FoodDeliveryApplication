@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @RestController
 public class UserController {
@@ -68,6 +70,7 @@ public class UserController {
 				restaurants.add(u);
 			}
 		}
+
 		return restaurants;
 	}
 
@@ -99,15 +102,8 @@ public class UserController {
 
 	@GetMapping(path ="/admins")
 	public List<User> getAllAdmins(){
-		List<User> admins = new ArrayList<>();
-		List<User> allUsers = userRepo.findAll();
-		for(User u: allUsers){
-			String role = u.getRole();
-			if(role != null && role.equals(UserRole.ADMIN)){
-				admins.add(u);
-			}
-		}
-		return admins;
+		List<User> users =  userRepo.findByRole(UserRole.ADMIN);
+		return users;
 	}
 
 	@GetMapping(value = "/delete/{id}")
