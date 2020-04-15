@@ -4,6 +4,7 @@ import com.fooddeliveryapp.storefront.models.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
@@ -61,42 +62,42 @@ class NavinFunctionsTest {
         OrderEntity orderEntity1 = new OrderEntity("food1", 5);
 
         // Order
-        Order order1 = new Order("order1", "customer1", "restaurant1", Arrays.asList(orderEntity1), "driver1", OrderState.DELIVERED, "driver1");
-        Order order2 = new Order("order2", "customer2", "restaurant2", Arrays.asList(orderEntity1), "driver1", OrderState.PENDING, "driver1");
-        Order order3 = new Order("order3", "customer3", "restaurant3", Arrays.asList(orderEntity1), "driver2", OrderState.DELIVERED, "driver1");
-        Order order4 = new Order("order4", "customer4", "restaurant4", Arrays.asList(orderEntity1), "driver2", OrderState.ACCEPTED, "driver1");
-        Order order5 = new Order("order5", "customer5", "restaurant5", Arrays.asList(orderEntity1), "driver3", OrderState.DELIVERED, "driver1");
-        Order order6 = new Order("order6", "customer6", "restaurant6", Arrays.asList(orderEntity1), "driver4", OrderState.PICKEDUP, "driver1");
-        Order order7 = new Order("order7", "customer7", "restaurant7", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order8 = new Order("order8", "customer8", "restaurant8", Arrays.asList(orderEntity1), "driver5", OrderState.REJECTED, "driver1");
-        Order order9 = new Order("order9", "customer9", "restaurant9", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order10 = new Order("order10", "customer10", "restaurant10", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order11 = new Order("order11", "customer1", "restaurant1", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order12 = new Order("order12", "customer1", "restaurant1", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order13 = new Order("order13", "customer1", "restaurant1", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order14 = new Order("order14", "customer3", "restaurant1", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order15 = new Order("order15", "customer3", "restaurant2", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order16 = new Order("order16", "customer5", "restaurant2", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order17 = new Order("order17", "customer5", "restaurant2", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order18 = new Order("order18", "customer5", "restaurant2", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order19 = new Order("order19", "customer7", "restaurant3", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order20 = new Order("order20", "customer7", "restaurant4", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order21 = new Order("order21", "customer7", "restaurant5", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
-        Order order22 = new Order("order22", "customer9", "restaurant6", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1");
+        Order order1 = new Order("order1", "customer1", "restaurant1", Arrays.asList(orderEntity1), "driver1", OrderState.DELIVERED, "driver1", 20.0);
+        Order order2 = new Order("order2", "customer2", "restaurant2", Arrays.asList(orderEntity1), "driver1", OrderState.PENDING, "driver1", 20.0);
+        Order order3 = new Order("order3", "customer3", "restaurant3", Arrays.asList(orderEntity1), "driver2", OrderState.DELIVERED, "driver1", 20.0);
+        Order order4 = new Order("order4", "customer4", "restaurant4", Arrays.asList(orderEntity1), "driver2", OrderState.ACCEPTED, "driver1", 20.0);
+        Order order5 = new Order("order5", "customer5", "restaurant5", Arrays.asList(orderEntity1), "driver3", OrderState.DELIVERED, "driver1", 20.0);
+        Order order6 = new Order("order6", "customer6", "restaurant6", Arrays.asList(orderEntity1), "driver4", OrderState.PICKEDUP, "driver1", 20.0);
+        Order order7 = new Order("order7", "customer7", "restaurant7", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order8 = new Order("order8", "customer8", "restaurant8", Arrays.asList(orderEntity1), "driver5", OrderState.REJECTED, "driver1", 20.0);
+        Order order9 = new Order("order9", "customer9", "restaurant9", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order10 = new Order("order10", "customer10", "restaurant10", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order11 = new Order("order11", "customer1", "restaurant1", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order12 = new Order("order12", "customer1", "restaurant1", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order13 = new Order("order13", "customer1", "restaurant1", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order14 = new Order("order14", "customer3", "restaurant1", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order15 = new Order("order15", "customer3", "restaurant2", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order16 = new Order("order16", "customer5", "restaurant2", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order17 = new Order("order17", "customer5", "restaurant2", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order18 = new Order("order18", "customer5", "restaurant2", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order19 = new Order("order19", "customer7", "restaurant3", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order20 = new Order("order20", "customer7", "restaurant4", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order21 = new Order("order21", "customer7", "restaurant5", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
+        Order order22 = new Order("order22", "customer9", "restaurant6", Arrays.asList(orderEntity1), "driver5", OrderState.DELIVERED, "driver1", 20.0);
 
         allOrders = Arrays.asList(order1, order2, order3, order4, order5, order6, order7, order8);
 
         // Food
-        Food food1 = new Food("food1", "Pizza", 15.3, "Italian Food", "https://images.app.goo.gl/vebgTeEk7Y4Dj2Lg7", "restaurant10", 4);
-        Food food2 = new Food("food2", "MoMo", 8.2, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant1", 5);
-        Food food3 = new Food("food3", "MoMo", 10.1, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant9", 4);
-        Food food4 = new Food("food4", "MoMo", 9.5, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant1", 4);
-        Food food5 = new Food("food5", "MoMo", 12.3, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant8", 5);
-        Food food6 = new Food("food6", "MoMo", 2.7, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant1", 2);
-        Food food7 = new Food("food7", "MoMo", 1.8, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant2", 1);
-        Food food8 = new Food("food8", "MoMo", 0.5, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant1", 4);
-        Food food9 = new Food("food9", "MoMo", 19.25, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant7", 3);
-        Food food10 = new Food("food10", "MoMo", 1.25, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant2", 4);
+        Food food1 = new Food("food1", "Pizza", 15.3, "Italian Food", "https://images.app.goo.gl/vebgTeEk7Y4Dj2Lg7", "restaurant10", 4, LocalDate.now());
+        Food food2 = new Food("food2", "MoMo", 8.2, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant1", 5, LocalDate.now());
+        Food food3 = new Food("food3", "MoMo", 10.1, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant9", 4, LocalDate.now());
+        Food food4 = new Food("food4", "MoMo", 9.5, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant1", 4, LocalDate.now());
+        Food food5 = new Food("food5", "MoMo", 12.3, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant8", 5, LocalDate.now());
+        Food food6 = new Food("food6", "MoMo", 2.7, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant1", 2, LocalDate.now());
+        Food food7 = new Food("food7", "MoMo", 1.8, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant2", 1, LocalDate.now());
+        Food food8 = new Food("food8", "MoMo", 0.5, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant1", 4, LocalDate.now());
+        Food food9 = new Food("food9", "MoMo", 19.25, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant7", 3, LocalDate.now());
+        Food food10 = new Food("food10", "MoMo", 1.25, "Nepali Food", "https://images.app.goo.gl/vxwvS2qsvcKwXueU8", "restaurant2", 4, LocalDate.now());
         foods = Arrays.asList(food1, food2, food3,food4,food5,food6,food7,food8,food9,food10);
     }
 
