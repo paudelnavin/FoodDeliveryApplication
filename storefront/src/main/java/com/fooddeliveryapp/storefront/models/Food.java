@@ -1,12 +1,7 @@
 package com.fooddeliveryapp.storefront.models;
 
-<<<<<<< HEAD
-=======
-
-import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
->>>>>>> dev
 public class Food {
     private String id;
     private String name;
