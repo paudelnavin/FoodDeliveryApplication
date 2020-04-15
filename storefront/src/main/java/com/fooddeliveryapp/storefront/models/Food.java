@@ -1,8 +1,5 @@
 package com.fooddeliveryapp.storefront.models;
 
-
-import javax.validation.constraints.NotNull;
-
 public class Food {
     private String id;
     private String name;
